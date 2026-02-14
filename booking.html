@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        <!--small search bar-->
+        <div class="nav-search">
+            <input type="text" placeholder="Search">
+            <button>🔍</button>
+        </div>
+
+    </nav>
+
+    <main>
+        <header>
+            <h1>Book Your Tour</h1>
+            <p>Fill in the details below to book your next adventure!</p>
+        </header>
+
+        <section class="booking-form">
+            <form id="bookingForm">
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="people">Number of People:</label>
+                <input type="number" id="people" required>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+
+                <label for="destination">Select Destination:</label>
+                <select id="destination" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="dal-lake">House Boats on Dal Lake</option>
+                    <option value="taj-mahal">Taj Mahal</option>
+                    <option value="gangtok">Gangtok</option>
+                    <option value="india-gate">India Gate</option>
+                    <option value="golden-temple">Golden Temple</option>
+                    <option value="jatayu-rock">Jatayu Earth's Center</option>
+                    <option value="backwater-kerala">Backwater in Kerala</option>
+                </select>
+
+                <button type="submit">Book Now</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tour Guide Website. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+
+        let user = localStorage.getItem("loggedInUser");
+
+        if (!user) {
+            window.location.href = "login.html";
+        }
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            console.log("JS running");
+
+            const form = document.getElementById("bookingForm");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();  // IMPORTANT
+
+                const name = document.getElementById("name").value;
+                const people = document.getElementById("people").value;
+                const date = document.getElementById("date").value;
+                const email = document.getElementById("email").value;
+                const destination = document.getElementById("destination").value;
+
+                const bookingData = {
+                    name,
+                    people,
+                    date,
+                    email,
+                    destination
+                };
+
+                let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+                bookings.push(bookingData);
+
+                localStorage.setItem("bookings", JSON.stringify(bookings));
+
+                console.log("Saved:", localStorage.getItem("bookings"));
+
+                alert("Booking Successful!");
+
+                form.reset();
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>

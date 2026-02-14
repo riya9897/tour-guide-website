@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="dashboard-navbar">
+        <ul class="dashboard-nav">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="my-bookings.html">My Bookings</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="logout.html">Logout</a></li>
+
+            <li>👤 <span id="navUsername">User</span></li>
+        </ul>
+    </nav>
+    <main class="dashboard-main">
+        <header>
+            <h1>Welcome to Your Dashboard</h1>
+        </header>
+
+        <section class="dashboard-overview">
+            <div class="box2">
+                <h2>Overview</h2>
+                <p>Here you can manage your bookings, view your profile, and explore new tours.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tour Guide Website. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    let storedUser = localStorage.getItem("loggedInUser");
+
+    // STEP 1: Check login protection
+    if (!storedUser) {
+        window.location.href = "login.html";
+        return; // stop further execution
+    }
+
+    // STEP 2: Show username
+    document.getElementById("navUsername").textContent = storedUser;
+
+});
+</script>
+
+
+
+
+</body>
+
+</html>

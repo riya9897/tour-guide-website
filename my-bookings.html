@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="dashboard-navbar">
+        <ul class="dashboard-nav">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="my-bookings.html">My Bookings</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+    <main class="bookings-main">
+        <header>
+            <h1>My Bookings</h1>
+        </header>
+
+        <section class="bookings-list">
+            <div id="bookingList"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tour Guide Website. All rights reserved.</p>
+    </footer>
+
+   
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const bookingsContainer = document.querySelector(".bookings-list");
+
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    if (bookings.length === 0) {
+        bookingsContainer.innerHTML = `
+            <div class="box2">
+                <h2>No Bookings Found</h2>
+                <p>You have not made any bookings yet.</p>
+            </div>
+        `;
+        return;
+    }
+
+    bookingsContainer.innerHTML = "";
+
+    bookings.forEach((booking, index) => {
+
+        const bookingDiv = document.createElement("div");
+        bookingDiv.classList.add("box2");
+
+        bookingDiv.innerHTML = `
+            <h3>${booking.destination}</h3>
+            <p><strong>Name:</strong> ${booking.name}</p>
+            <p><strong>People:</strong> ${booking.people}</p>
+            <p><strong>Date:</strong> ${booking.date}</p>
+            <p><strong>Email:</strong> ${booking.email}</p>
+            
+            <button onclick="deleteBooking(${index})" 
+                    style="background:red;color:white;padding:8px;border:none;cursor:pointer;">
+                Delete
+            </button>
+        `;
+
+        bookingsContainer.appendChild(bookingDiv);
+
+    });
+
+});
+
+function deleteBooking(index) {
+
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    bookings.splice(index, 1); // remove booking
+
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+
+    alert("Booking Deleted");
+
+    location.reload(); // refresh page
+
+}
+</script>
+
+
+
+
+</body>
+
+</html>

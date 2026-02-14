@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="dashboard-navbar">
+        <ul class="dashboard-nav">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="my-bookings.html">My Bookings</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+    <main class="logout-main">
+        <header>
+            <h1>You have been logged out</h1>
+        </header>
+
+        <section class="logout-message">
+            <div class="box2">
+                <h2>Thank you for visiting!</h2>
+                <p>You have successfully logged out. We hope to see you again soon.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tour Guide Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        localStorage.removeItem("loggedInUser");
+
+        alert("Logged out successfully");
+
+        window.location.href = "login.html";
+
+    </script>
+
+
+</body>
+
+</html>
