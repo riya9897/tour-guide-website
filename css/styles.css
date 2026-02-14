@@ -1,0 +1,638 @@
+/* css for index.html*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: rgb(153, 153, 102)
+    
+}
+
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    background-color: rgb(255, 255, 204);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;   /* center vertically */
+    padding: 0 40px;       /* left-right only */
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
+}
+
+nav ul li a{
+    color: black;
+}
+
+.container img {
+    object-fit: cover;
+    width: 100%;
+    height: 60vh;   /* 100vh → 60vh */
+}
+
+.nav-search{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-search input{
+    width: 140px;          /* small width */
+    padding: 6px 8px;
+    margin-left: 30px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.nav-search button{
+    padding: 6px 10px;;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.user-menu {
+    position: relative;
+    padding: 90px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    background-color: white;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 6px;
+}
+
+.user-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 8px 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown li a:hover {
+    background-color: #f2f2f2;
+}
+
+
+main{
+    margin-top: 80px;  /* exactly navbar height */
+}
+
+main header{
+    text-align: center;
+    padding: 10px 0;
+}
+
+main header h1{
+    font-size: 56px;
+    color: white;
+    text-decoration: underline;
+}
+
+main p{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin: 20px 0 40px 0;  
+}
+
+.popular-destination {
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+}
+
+
+.popular-destination h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+
+.destination-card img {
+    width: 300px;      /* fixed size for better control */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    border: black 2px solid;
+}
+
+
+.destination-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.box{
+    background-color: rgba(255, 255, 255, 0.549);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+.destination-card h3 {
+    margin: 10px 0 5px 0;
+    color: black;
+}
+.destination-card p {
+    color: black;
+    font-size: 14px;
+}
+
+.content{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.content h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+footer{
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid black;
+    color:black
+}
+
+/* css for destination.html*/
+
+h1{
+    text-align: center;
+    margin: 120px 0;
+    color: white;
+    font-size: 56px;
+}
+
+
+.destination-image img{
+    width: 100%;
+   /* height: 70vh;*/
+   height: auto;
+    object-fit: cover;
+    border: black 4px solid;
+}
+
+/*.destination-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.destination-image img{
+    width: 100%;
+    height: auto;  */    /* 🔥 important */
+    /*max-height: 400px;
+    object-fit: cover;
+    border: black 4px solid;
+    display: block;
+}*/
+
+.destination-info{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+
+.destination-card a{
+    text-decoration: none;
+    color: black;
+}
+
+/*css for guide profiles*/
+
+.guide-card img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: black 2px solid;
+    display: block;
+    margin: 0 auto;
+}
+
+.guide-card a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-size:15px;
+}
+
+.guide-card p{
+    color:black
+}
+
+.guide-card h3{
+    text-align: center;
+    color: black;
+    margin: 10px 0 5px 0;
+}
+
+.p{
+/*color: white;*/
+    font-size: 30px;
+}
+
+/*for each guide's page*/
+.box1{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid black;;
+}
+
+.box1 p{
+    color: black;
+}
+
+.box1 img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: black 2px solid;
+}
+
+.box1 ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+/*booking form css*/
+.booking-form{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px;
+    margin: 40px auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.booking-form label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+.booking-form input{
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.booking-form button{
+    padding: 10px 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/*css for login page*/
+.login{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: 100px auto;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+/*css for dashboard page*/
+
+.dashboard-overview{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    border: 2px solid black;
+    margin: 50px auto;
+    width: 50%; 
+    border-radius: 10px;    
+}
+.box2 h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: white;
+}
+
+/*css for my booking page*/
+
+.bookings-list{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    border: 2px solid black;
+    margin: 50px auto;
+    width: 60%; 
+    border-radius: 10px;    
+}
+
+/*css for profile page*/
+
+.profile-details{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 40px auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.profile-details img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: black 2px solid;
+   /* justify-content: center;*/
+    display: flex;
+    margin: 0 auto;
+}
+
+/*css for logout page*/
+
+.logout-message{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    border: 2px solid black;
+    margin: 100px auto;
+    width: 40%;     
+    border-radius: 10px;    
+}
+
+.box3{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid black;
+
+}
+
+.box3 img{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: black 2px solid;
+    display: block;
+    margin: 0 auto;
+}
+
+.box3 h3{
+    margin: 10px 0 5px 0;
+    color: black;
+    text-align: center;
+}
+
+.box3 p {
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    
+}
+
+
+/* DESTINATION PAGE FIX (NO EXISTING CSS TOUCHED)  */
+
+.destinations-page .box3 {
+    width: 95%;
+    overflow: hidden;   
+}
+
+/* cards ko container ke andar rakho */
+.destinations-page .destinations-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* image ko box ke andar force karo */
+.destinations-page .destination-card img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+/*Responsive CSS */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+
+    nav {
+        height: auto;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;   /* vertical navbar */
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    main {
+        margin-top: 140px;  /* navbar ke neeche space */
+    }
+
+    /*nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }*/
+
+    .box,
+    .booking-form,
+    .dashboard-overview,
+    .profile-details,
+    .logout-message {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .container img,
+    .destination-image img {
+        height: 40vh;
+    }
+
+     h1 {
+        font-size: 36px;
+    }
+
+    .popular-destination h2 {
+        font-size: 32px;
+    }
+
+    .dashboard-overview {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .box2 h2 {
+        font-size: 32px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    nav {
+        position: relative;   /* fixed hata do for phone */
+        height: auto;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .nav-search {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .nav-search input {
+        width: 80%;
+        margin-left: 0;
+    }
+
+    .user-menu {
+        padding: 0;
+        margin-top: 5px;
+    }
+
+    main {
+        margin-top: 20px;  /* fixed navbar nahi hai, so kam gap */
+    }
+
+    .user-menu {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .dropdown {
+        display: block;
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .destinations-page h1 {
+        font-size: 30px;
+        margin: 90px 0 20px;
+    }
+
+    .destinations-page .box3 {
+        width: 95%;
+    }
+
+    .destinations-page .destination-card {
+        width: 100%;
+    }
+
+     .destinations-page .destination-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+     h1 {
+        font-size: 28px;
+    }
+
+    .destinations-page .destination-card {
+        width: 100%;
+    }
+    
+}
